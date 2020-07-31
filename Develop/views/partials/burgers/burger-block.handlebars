@@ -1,8 +1,8 @@
 <li>
-	{{burger_name}}
-
-	<button class="change-devour" data-id="{{id}}" data-newstate="{{devoured}}">
-		{{#if devoured}}Your devoured the burger! Yum!{{else}}The burger has gone uneaten.{{/if}}
+	<h3>{{burger_name}}</h3>
+	<br>
+	<button class="change-status" data-id="{{id}}" data-newstate="{{devoured}}">
+		{{#if devoured}}Yum! Want to make another?{{else}}Devour your burger before it gets cold.{{/if}}
 	</button>
 
 	<button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
