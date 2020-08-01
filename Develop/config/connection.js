@@ -1,14 +1,18 @@
 const mysql = require("mysql");
-const connection;
+const dotenv = require("dotenv");
+
+dotenv.config();
+const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD } = process.env;
+let connection;
 
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "hardfliprails",
+  host: DB_HOST,
+  port: DB_PORT,
+  user: DB_USER,
+  password: DB_PASSWORD,
   database: "burgers_db"
 });
 }
