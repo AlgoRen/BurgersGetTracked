@@ -2,7 +2,7 @@ const mysql = require("mysql");
 const dotenv = require("dotenv");
 
 dotenv.config();
-const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD } = process.env;
+const { DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env;
 let connection;
 
 if (process.env.JAWSDB_URL) {
@@ -13,7 +13,7 @@ if (process.env.JAWSDB_URL) {
   port: DB_PORT,
   user: DB_USER,
   password: DB_PASSWORD,
-  database: "burgers_db"
+  database: DB_DATABASE
 });
 }
 
